@@ -1,0 +1,7 @@
+{
+  "name": "Natasha Mae’s Enterprise - Premier Banquet Portfolio",
+  "description": "A sophisticated multi-asset venue management platform showcasing historic and modern event spaces in the Delaware Valley with integrated decor and catering services.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
