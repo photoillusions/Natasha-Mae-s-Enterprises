@@ -1,15 +1,6 @@
-import React, { useState } from 'react';
-import { ChevronRight, Image as ImageIcon } from 'lucide-react';
+import React from 'react';
+import { ChevronRight } from 'lucide-react';
 import { VENUES } from '../constants';
-
-const galleryImages = [
-  'https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&q=80&w=800',
-  'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&q=80&w=800',
-  'https://images.unsplash.com/photo-1519224052708-081b537129dd?auto=format&fit=crop&q=80&w=800',
-  'https://images.unsplash.com/photo-1527529482837-4698179dc6ce?auto=format&fit=crop&q=80&w=800',
-  'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&q=80&w=800',
-  'https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&q=80&w=800',
-];
 
 const ProfessionalLogo = () => (
   <div className="flex flex-col items-center justify-center select-none">
@@ -69,26 +60,100 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Gallery Section */}
-      <section className="py-56 bg-stone-50">
-        <div className="max-w-[1600px] mx-auto px-8">
-          <div className="text-center mb-28 max-w-4xl mx-auto">
-            <span className="text-emerald-800 text-[11px] uppercase tracking-[0.6em] font-black block mb-6">Visual Showcase</span>
-            <h2 className="text-5xl md:text-7xl font-bold text-stone-900 tracking-tighter leading-none mb-10">Event Gallery</h2>
-            <p className="text-stone-500 text-lg italic max-w-2xl mx-auto">Explore our collection of stunning celebrations and elegant events hosted at our premier venues.</p>
+      {/* Premier Venues Showcase */}
+      <section className="py-32 bg-gradient-to-b from-stone-50 to-white">
+        <div className="max-w-7xl mx-auto px-8">
+          {/* Header */}
+          <div className="text-center mb-20">
+            <div className="flex items-center justify-center gap-8 mb-8">
+              <div className="h-[1px] w-24 bg-stone-300"></div>
+              <h2 className="text-4xl md:text-5xl font-serif text-stone-900 tracking-wide">Delaware Valley's Premier Event Destinations</h2>
+              <div className="h-[1px] w-24 bg-stone-300"></div>
+            </div>
+            <p className="text-stone-600 text-lg max-w-3xl mx-auto leading-relaxed">
+              Experience grandeur like never before. Natasha Mae's Enterprises offers luxury banquet halls across the Delaware Valley, crafted for unforgettable weddings, corporate events, and majestic celebrations.
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {galleryImages.map((src, i) => (
-              <div key={i} className="group relative overflow-hidden rounded-[2.5rem] bg-stone-200 cursor-pointer shadow-xl transition-all hover:scale-[1.02] duration-500">
-                <img src={src} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" alt="Gallery item" />
-                <div className="absolute inset-0 bg-stone-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                  <div className="w-16 h-16 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center border border-white/20">
-                    <ImageIcon className="text-white w-6 h-6" />
-                  </div>
+          {/* Main Content */}
+          <div className="mb-24">
+            <h3 className="text-center text-3xl md:text-4xl font-serif text-stone-900 mb-6 tracking-wide">
+              PERFECTLY CRAFTED VENUES FOR EVERY OCCASION
+            </h3>
+            <p className="text-center text-stone-600 text-base max-w-2xl mx-auto mb-16">
+              From dream weddings to milestone parties and corporate galas, our banquet halls adapt to your event.
+            </p>
+
+            {/* Interactive Venue Showcase */}
+            <div className="relative group">
+              <img 
+                src="/images/venues/vault-ballroom.jpg" 
+                alt="The Vault Ballroom Grand Hall" 
+                className="w-full h-[600px] object-cover rounded-lg shadow-2xl"
+              />
+              
+              {/* Overlay sections */}
+              <div className="absolute bottom-0 left-0 right-0 grid grid-cols-4 gap-0">
+                <a href="/venues#vault" className="bg-stone-900/75 backdrop-blur-sm text-white py-6 text-center border-r border-white/10 hover:bg-emerald-900/90 transition-all group">
+                  <p className="text-[11px] font-black uppercase tracking-[0.3em]">The Grand Ballroom</p>
+                </a>
+                <a href="/venues#vault" className="bg-stone-900/75 backdrop-blur-sm text-white py-6 text-center border-r border-white/10 hover:bg-emerald-900/90 transition-all">
+                  <p className="text-[11px] font-black uppercase tracking-[0.3em]">Historic Vault Room</p>
+                </a>
+                <a href="/venues#liberty" className="bg-stone-900/75 backdrop-blur-sm text-white py-6 text-center border-r border-white/10 hover:bg-emerald-900/90 transition-all">
+                  <p className="text-[11px] font-black uppercase tracking-[0.3em]">Open-Air Patio</p>
+                </a>
+                <a href="/venues#vault" className="bg-stone-900/75 backdrop-blur-sm text-white py-6 text-center hover:bg-emerald-900/90 transition-all">
+                  <p className="text-[11px] font-black uppercase tracking-[0.3em]">Garden Runway</p>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Services Highlight */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center mt-32">
+            <div>
+              <div className="flex items-center gap-4 mb-6">
+                <div className="h-[1px] w-16 bg-stone-300"></div>
+                <h3 className="text-3xl font-serif text-stone-900 tracking-wide">NATASHA MAE'S ENTERPRISES</h3>
+              </div>
+              <h4 className="text-xl font-bold text-emerald-800 uppercase tracking-[0.2em] mb-6">Elevate Your Business Events</h4>
+              <p className="text-stone-600 leading-relaxed mb-6">
+                Host product launches, seminars, award nights, or team-building sessions in a grand yet professional setting. Equipped with state-of-the-art presentation systems, soundproofing, and customized layouts, we redefine corporate hosting.
+              </p>
+              <div className="space-y-3 mb-8">
+                <div className="flex items-start gap-3">
+                  <span className="text-emerald-800 font-bold mt-1">✓</span>
+                  <span className="text-stone-600">Full-service event planning with dedicated Personal Event Manager</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-emerald-800 font-bold mt-1">✓</span>
+                  <span className="text-stone-600">In-house Divine Dining catering with customizable menus</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-emerald-800 font-bold mt-1">✓</span>
+                  <span className="text-stone-600">Natasha's Heavenly Designs for spectacular décor and floral arrangements</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-emerald-800 font-bold mt-1">✓</span>
+                  <span className="text-stone-600">Three distinct venues across the Delaware Valley</span>
                 </div>
               </div>
-            ))}
+              <a href="/contact" className="inline-block bg-stone-950 text-white px-12 py-5 text-[11px] uppercase tracking-[0.4em] font-black hover:bg-emerald-900 transition-all shadow-xl">
+                REQUEST CONSULTATION
+              </a>
+            </div>
+            
+            <div className="grid grid-cols-2 gap-4">
+              <div className="space-y-4">
+                <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&q=80&w=600" alt="Elegant wedding setup" className="w-full h-64 object-cover rounded-lg shadow-lg" />
+                <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&q=80&w=600" alt="Corporate event" className="w-full h-48 object-cover rounded-lg shadow-lg" />
+              </div>
+              <div className="space-y-4 mt-8">
+                <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&q=80&w=600" alt="Grand ballroom" className="w-full h-48 object-cover rounded-lg shadow-lg" />
+                <img src="https://images.unsplash.com/photo-1478146896981-b80fe463b330?auto=format&fit=crop&q=80&w=600" alt="Floral arrangements" className="w-full h-64 object-cover rounded-lg shadow-lg" />
+              </div>
+            </div>
           </div>
         </div>
       </section>
