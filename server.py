@@ -410,12 +410,13 @@ def calendar_tool_route():
                 except Exception as e:
                     print(f"Error adjusting event buffers: {e}")
 
+            print(f"🚀 Calling book_appointment with: {args.get('summary')}, {start_iso}, {end_iso}, {args.get('attendee_email')}")
             result = calendar_service.book_appointment(
-                summary=args.get('summary'),
-                start_time_iso=start_iso,
-                end_time_iso=end_iso,
-                attendee_email=args.get('attendee_email'),
-                description=args.get('description', '')
+                args.get('summary'),
+                start_iso,
+                end_iso,
+                args.get('attendee_email'),
+                args.get('description', '')
             )
     except Exception as e:
         result = f"Error executing tool: {str(e)}"
