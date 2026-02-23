@@ -394,10 +394,11 @@ def calendar_tool_route():
             result = calendar_service.check_availability(start_iso, end_iso)
             
         elif function_name == 'book_appointment':
-            start_iso = args.get('start_time')
-            end_iso = args.get('end_time')
+            # Map start_time/end_time to start_time_iso/end_time_iso for calendar_service compatibility
+            start_iso = args.get('start_time') or args.get('start_time_iso')
+            end_iso = args.get('end_time') or args.get('end_time_iso')
             is_event = args.get('is_event', False)
-            
+
             # Apply 1-hour buffer for EVENTS
             if is_event:
                 try:
