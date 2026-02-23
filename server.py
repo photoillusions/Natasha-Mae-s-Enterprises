@@ -412,8 +412,8 @@ def calendar_tool_route():
 
             result = calendar_service.book_appointment(
                 summary=args.get('summary'),
-                start_time=start_iso,
-                end_time=end_iso,
+                start_time_iso=start_iso,
+                end_time_iso=end_iso,
                 attendee_email=args.get('attendee_email'),
                 description=args.get('description', '')
             )
